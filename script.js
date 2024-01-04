@@ -1,9 +1,48 @@
 const main = document.querySelector('main');
 const searchBox = document.querySelector('#search-box');
 
-const loaderAnimation = () => {
-    const loader = document.querySelector('#loader');
-    setTimeout(() => loader.style.top = '-100vh', 5100);
+const gsapAnimations = () => {
+    const tl = gsap.timeline();
+    tl.from('#loader h1 span, #loader img', {
+        transform: 'translateY(-150px) rotate(-10deg)',
+        opacity: 0,
+        duration: .5,
+        stagger: .1,
+    });
+    tl.to('#loader h1 span, #loader img', {
+        transform: 'translateY(-50px) rotate(-10deg)',
+        opacity: 0,
+        duration: .4,
+        stagger: .1,
+        delay: 1
+    });
+    tl.to('#loader', {
+        y: '-100%',
+        duration: .75,
+    });
+    tl.from('.sidebar .logo,.sidebar li,.sidebar .user', {
+        y: 20,
+        opacity: 0,
+        duration: .4,
+        stagger: .1
+    });
+    tl.from('.search-bar', {
+        y: 20,
+        opacity: 0,
+    });
+};
+
+const cardAnimation = () => {
+    gsap.from('.card-main', {
+        scale: .2,
+        opacity: 0,
+        duration: .4,
+        stagger: .1,
+    });
+};
+
+const scrollToTop = () => {
+    document.body.scrollTop = 0;
 };
 
 const toggleActiveClass = () => {
@@ -111,6 +150,8 @@ const createPage = async () => {
             category !== 'Home' && category !== 'Bookmarks' && main.append(section);
             toggleBookmark();
             initiateSearch();
+            scrollToTop();
+            cardAnimation();
         }
     });
 };
@@ -129,6 +170,7 @@ const createHomePage = async () => {
 
     main.append(trendingSection, recommendedSection);
     toggleBookmark();
+    cardAnimation();
 };
 
 const createBookmarkPage = async () => {
@@ -144,6 +186,7 @@ const createBookmarkPage = async () => {
 
     main.append(section);
     toggleBookmark();
+    cardAnimation();
 };
 
 const toggleBookmark = () => {
@@ -189,11 +232,12 @@ const initiateSearch = async () => {
         } else {
             main.innerHTML = pageData;
         }
+        cardAnimation();
         toggleBookmark();
     });
 };
 
-loaderAnimation();
+gsapAnimations();
 toggleActiveClass();
 createHomePage();
 createPage();

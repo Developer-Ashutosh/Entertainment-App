@@ -1,0 +1,243 @@
+@media (width<804px) {
+    section.sidebar {
+        position: relative;
+        height: 100px;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    section.sidebar .content {
+        flex-direction: row;
+        padding-bottom: .6rem;
+    }
+
+    section.sidebar .content nav {
+        flex-direction: row;
+        gap: 2.5rem;
+    }
+
+    section.sidebar .content nav .logo {
+        scale: 1.2;
+    }
+
+    section.sidebar .content nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    section.sidebar .content nav ul li svg:hover {
+        scale: 1.05;
+
+        path {
+            fill: #5A698F;
+        }
+    }
+
+    section.sidebar .content nav ul li svg.active:hover {
+        scale: 1.15;
+
+        path {
+            fill: var(--Pure-White);
+        }
+    }
+
+    section.sidebar .content .user svg:hover path {
+        stroke: #7a8299;
+    }
+
+    main,
+    header {
+        width: 95%;
+        margin-inline: auto;
+    }
+
+    header {
+        padding-top: .8rem;
+        padding-right: 0;
+    }
+
+    .section {
+        padding-right: 0;
+        gap: 1rem;
+        row-gap: 1.5rem;
+    }
+
+    #trending {
+        padding-right: 0;
+        gap: 1.3rem;
+    }
+
+    .card {
+        height: 200px;
+        min-width: 290px;
+        scale: 1;
+    }
+
+    .card-main.trend {
+        min-width: 380px;
+
+        .card {
+            height: 215px;
+        }
+
+        .details {
+            margin-inline: .8rem;
+        }
+    }
+
+    .details {
+        margin-inline: .4rem;
+    }
+
+    #loader h1 {
+        font-size: 2.2rem;
+    }
+
+    #loader img {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+@media (width<500px) {
+    main h1 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-align: center;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        padding-inline: .5rem;
+    }
+
+    #trending {
+        gap: 1rem;
+    }
+
+    .card-main.trend {
+        min-width: 320px;
+
+        .card {
+            height: 200px;
+        }
+
+        .details {
+            align-items: flex-start;
+        }
+    }
+
+    .card {
+        height: 180px;
+        min-width: 290px;
+        scale: 1;
+    }
+
+    .bookmark-flag {
+        padding: 6px 7px;
+        padding-left: 7.5px;
+    }
+
+    .details {
+        align-items: center;
+    }
+
+    .details ul {
+        font-size: 14px;
+    }
+
+    #loader h1 {
+        font-size: 1.8rem;
+    }
+
+    #loader img {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (width<425px) {
+    section.sidebar .content {
+        justify-content: space-between;
+    }
+
+    section.sidebar .content nav {
+        gap: 1.5rem;
+    }
+
+    .search-bar {
+        gap: .5rem;
+    }
+
+    #trending {
+        gap: .6rem;
+    }
+
+    .section {
+        row-gap: 1rem;
+    }
+
+    .card-main.trend {
+        min-width: 300px;
+    }
+
+    .card {
+        min-width: 260px;
+    }
+
+    #loader {
+        flex-direction: column;
+    }
+
+    #loader h1 {
+        gap: 3px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (width<375px) {
+    .container {
+        padding-inline: .1rem;
+    }
+
+    section.sidebar .content nav {
+        gap: 1.2rem;
+    }
+
+    section.sidebar .content nav .logo {
+        scale: 1.05;
+    }
+
+    section.sidebar .content nav ul li svg.active:hover {
+        scale: 1.1;
+    }
+
+    section.sidebar .content .user svg {
+        scale: 1.1;
+    }
+
+    main h1 {
+        font-size: 1.6rem;
+    }
+
+    .card-main.trend {
+        min-width: 280px;
+
+        .card {
+            height: 180px;
+        }
+    }
+
+    .card {
+        min-width: 255px;
+    }
+
+    .bookmark-flag {
+        padding: 5.5px 6.5px;
+        padding-left: 6.8px;
+    }
+}

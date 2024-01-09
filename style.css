@@ -31,6 +31,7 @@ body {
     scroll-behavior: smooth;
     background-color: var(--Dark-Blue);
     overflow-x: hidden;
+    pointer-events: none;
 }
 
 body::-webkit-scrollbar {
@@ -186,6 +187,7 @@ main section {
 }
 
 .section {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -196,7 +198,7 @@ main section {
 }
 
 #trending {
-    width: 100%;
+    width: 98%;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -209,6 +211,10 @@ main section {
 
 #trending::-webkit-scrollbar {
     display: none;
+}
+
+.card-main {
+    margin: 0 auto;
 }
 
 .card-main.trend {

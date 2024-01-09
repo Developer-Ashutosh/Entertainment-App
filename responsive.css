@@ -63,6 +63,7 @@
     }
 
     #trending {
+        width: 100%;
         padding-right: 0;
         gap: 1.3rem;
     }
@@ -99,13 +100,16 @@
     }
 }
 
-@media (width<500px) {
+@media (width<=628px) {
     main h1 {
         font-size: 1.8rem;
         font-weight: 400;
         text-align: center;
         width: 100%;
     }
+}
+
+@media (width<500px) {
 
     h2 {
         font-size: 1.3rem;

@@ -2,7 +2,7 @@
 // Developer: Ashutosh
 
 // Global variables: main container and search box
-const mainContainer = document.querySelector("main");
+const main = document.querySelector("main");
 const searchBox = document.querySelector("#search-box");
 
 // Function to handle GSAP animations
@@ -31,6 +31,7 @@ const gsapAnimations = () => {
 
   tl.to("html,body", {
     pointerEvents: "auto",
+    duration: 0.05,
   });
 
   tl.from(".sidebar .logo,.sidebar li,.sidebar .user", {

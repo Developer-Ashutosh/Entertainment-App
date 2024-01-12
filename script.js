@@ -93,7 +93,7 @@ const fetchData = async () => {
       ? await JSON.parse(localStorage.getItem("json-data"))
       : await response.json();
   localStorage.getItem("json-data") === null &&
-    localStorage.setItem("json-data", fetchedData);
+    localStorage.setItem("json-data", JSON.stringify(fetchedData));
   return fetchedData;
 };
 
@@ -273,7 +273,7 @@ const createBookmarkPage = async () => {
 
   main.append(section);
   toggleBookmark();
-  section.querySelector(".section").length > 0 && cardAnimation();
+  section.querySelectorAll(".section .card-main").length > 0 && cardAnimation();
 };
 
 // Function to toggle the bookmark status on click
@@ -315,7 +315,7 @@ const toggleBookmark = () => {
         !JSON.parse(parentElement.dataset.bookmarked)
       ) {
         setTimeout(() => removeCardAnimation(parentElement), 400);
-        setTimeout(() => parentElement.remove(), 900);
+        setTimeout(() => parentElement.remove(), 750);
       }
     });
   });
